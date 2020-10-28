@@ -1,24 +1,17 @@
-# 使用RabbitMQ实现分布式事务的最终一致，以及使用XA实现分布式事务
-
-基于XA协议，简单的模拟下单减库存
-
-详细信息，参考：[官方文档](https://dev.mysql.com/doc/refman/8.0/en/xa.html)
-
-xa的测试参考xa文件下的说明文件
----
-我这里主要是使用RabbitMQ实现分布式事务的最终一致
-
+# 使用RabbitMQ实现分布式事务的最终一致
 基于RabbitMQ协议，简单的模拟下单减库存
 
 下面是简单的时序图：
 
 ![transaction-mq](transaction-mq.png)
 
+
 [RabbitMQ安装](https://www.rabbitmq.com/download.html)
 
 MySql5.7的安装，我使用的是二进制包进行安装，它的安装看自己习惯
 
 MySql可以参考我的 mysql-install.sh 进行安装
+
 
 ----
 ### 测试步骤
@@ -55,4 +48,5 @@ MySql可以参考我的 mysql-install.sh 进行安装
     php OrderMany.php 100
     
     浏览器访问：http://address/OrderMany.php?num=100
+
 
